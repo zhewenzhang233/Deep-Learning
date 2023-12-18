@@ -1,0 +1,28 @@
+packages need to be installed:
+python 3.8
+PyTorch 1.10.0
+Transformers 4.8.0
+wandb
+
+dataset_analysis_generate.py contains  dataset analysis and create train,dev dataset with evidence text function
+
+Build  Dataset:
+rebuild_dataset.py, nohup python -u rebuild_dataset.py >evi.out 2>&1 &
+new-evidence.py, nohup python -u new-evidence.py >evi.out 2>&1 &
+generate_negative_evidence.py, nohup python -u generate_negative_evidence.py>evi.out 2>&1 &
+
+DPR train and predict:
+main.py(only for colab running), nohup python -u main.py >train.out 2>&1 &
+dpr_predict.py, nohup python -u dpr_predict.py >test.out 2>&1 &
+dpr_train.py(should be used on a better graphic card like 3090), nohup python -u dpr_train.py >train.out 2>&1 &
+
+Classification train and predict:
+classification_colab.py(only for colab running)nohup python -u classification_colab.py >cls.out 2>&1 &
+classification_train.py(should be used on a better graphic card like 3090), nohup python -u classification_train.py >cls.out 2>&1 &
+classification_predict.py, nohup python -u classification_predict.py >cls1.out 2>&1 &
+
+If want to use colab run the code please follow the instruction:
+change the old path to current path (for example, project_code/main.py to /content/drive/MyDrive/project_code2/main.py)
+!nvidia-smi
+!pip install transformers
+!python /content/drive/MyDrive/project_code2/main.py
