@@ -8,7 +8,7 @@ from model import Model
 from utils import solve_dataset, solve_pad_size,  unfreeze_all_modules
 from torch.utils.data.distributed import DistributedSampler
 import sys
-from prefix import traverse_net, traverse_fg_net, traverse_fgg_net, traverse_fm_net, traverse_lora_net
+from code.prefix import traverse_net, traverse_fg_net, traverse_fgg_net, traverse_fm_net, traverse_lora_net
 import torch.distributed as dist
 from transformers import WEIGHTS_NAME, CONFIG_NAME
 
